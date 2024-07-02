@@ -1,0 +1,44 @@
+body{
+    background-image: url('https://png.pngtree.com/back_origin_pic/03/91/31/216a8c258305188af56217c3b58b99c5.jpg');
+   
+    
+}
+button{
+    
+  
+    
+        margin-left:20px;
+        display: inline-block;
+        padding: 10px 20px; 
+        background-color: rgb(195, 201, 112);
+        
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+        width:200px
+        
+        
+      
+ 
+  
+  
+     
+}
+row{
+  margin-top: 25%;
+}
+container text-center{
+  margin-top: 25%;
+}
+filedset{
+ 
+background-color: green;
+}
+#mar{
+  
+}
+
+  

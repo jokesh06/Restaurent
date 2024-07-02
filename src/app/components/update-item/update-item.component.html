@@ -1,0 +1,37 @@
+<body >
+<div  class="container">
+<table  class="table" >
+    <thead>
+      <tr>
+        <th scope="col">Item_Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Quanity</th>
+        <th scope="col">Image</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+       
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of arr1">
+        <td>{{data.item_name}}</td>
+        <td>{{data.actual_price}}</td>
+        <td>{{data.dicount}}</td>
+        <td>{{data.quantity}}</td>
+        <td ><img [src]="'data:image/png/JPG;base64,'+data.item_image" alt="Item Image" style="width: 50px;height: 50px;"></td>
+        <td><button [routerLink]="['/update',data.item_name]">Edit</button></td>
+         <td><button [routerLink]="['/delete_item',data.item_name]">Delete</button></td>
+             
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+        
+</body> 
+        

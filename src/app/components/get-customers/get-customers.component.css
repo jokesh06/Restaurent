@@ -1,0 +1,16 @@
+body{
+    /* background-image: url('https://png.pngtree.com/back_origin_pic/03/91/31/216a8c258305188af56217c3b58b99c5.jpg');   */
+}
+table{
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    border: 1px solid black;
+    padding: 8px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }

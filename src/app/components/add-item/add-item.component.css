@@ -1,0 +1,22 @@
+body{
+   text-align: center;
+   background-image: url('https://png.pngtree.com/back_origin_pic/03/91/31/216a8c258305188af56217c3b58b99c5.jpg');
+   position:sticky;
+
+}
+
+fieldset{
+    margin: auto; /* Center the fieldset horizontally */
+  
+  width: 50%; /* Adjust the width as needed */
+  border: none; /* Remove default border */
+  padding: 20px; /* Add padding for spacing */
+   
+}
+.row{
+    padding: 10px;
+}
+.centered-fieldset{
+background-color: beige;
+box-shadow: inset;
+}

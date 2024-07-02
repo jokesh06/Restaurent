@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+        <link href="https://kit.fontawesome.com/dcfd6002fa.js" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+   
+</head>
+
+<body>
+    <header>
+             
+        <div class="navbar navbar-dark bg-white-transparent shadow-sm">
+          
+            <div class="navbar-brand align-item-center d-flex">
+                <i  class="fas fa-shipping-fast">&nbsp;
+                    
+                </i>
+                <strong ><i class="logo">M<i class="v">V</i>R</i></strong>
+               
+         
+             <input type="text" class="form-control" #SearchItem  placeholder="search Item" (keyup)="searchItem(SearchItem.value)" (change)="searchItem(SearchItem.value)">
+              
+                    <select id="categorySelect" class="form-control" #selectecategory  placeholder="Category"  (change)="selectcategory(selectecategory.value)">
+                        <option value="Special Items">Special Items</option>
+                        <option value="Milk Shakes">Milk Shakes</option>
+                        <option value="VegItems">VegItems</option>
+                        <option value="Non VegItem" >Non VegItem</option>
+                        <option value="Icecreams">Icecreams</option>
+                        <option value="Tiffine">Tiffine</option>
+                        <option value="Soups">Soups</option>
+                        <!-- Add more options as needed -->
+                      </select>
+                     
+                      <select id="categorySelect1" class="form-control" #selecteprice  placeholder="Selecte-price" (change)="selectPrice(selecteprice.value)">
+                        <option value="100" >0-100</option>
+                        <option value="200">100-200</option>
+                        <option value="300">200-300</option>
+                        <option value="400">300-400</option>
+                        <option value="600">500-600</option>
+                        <option value="800">600-800</option>
+                        <option value="1000">800-1000</option>
+                        <!-- Add more options as needed -->
+                      </select>
+                      
+                    
+                  <span></span> 
+                <button type="submit" class="btn btn-primary" (click)="SearchCuisen()">Search</button>
+                <span class="fas fa-search search-icon"></span>
+            </div>
+            <button class="btn btn-primary position-relative" routerLink="/addToCart">
+                <span class="badge bg-danger position-absolute top-0 start-0 translate-middle" >{{NumberOfrecoders}}</span>
+                <i class="fa-solid fa-cart-shopping fa-sm"></i>
+
+            </button>
+        </div>
+    
+           
+            
+            
+       
+    </header>
+    <router-outlet></router-outlet>
+         <h5 id="pop" *ngIf="arr1?.length==0"><i class="fa-duotone fa-face-sad-tear"></i>No items available</h5>
+      
+    <div class="container py-5" *ngIf="isSearching1">
+        
+        <div class="row row-cols-1 row-cols-md-4 g-4 py-5">
+            <div class="col" *ngFor="let data of arr1|filter:searchitem">
+                <div class="card" >
+                    <div class="image-container">
+                     <img class="home-page-item-image" [src]="'data:image/png/JPG;base64,'+data.item_image" alt="Item Image"></div>
+                    <div class="card-body" >
+                      <h5>{{data.item_name}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>{{data.item_description}}</p>
+                      </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3> Rs {{ data.actual_price}}</h3>
+                        <button class="btn btn-warning"  (click)="AddToCart(data.item_name)">Add to Cart</button>
+                        <label class="popupss"  *ngIf="successs">Added</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container py-5" *ngIf="isSearching" >
+        <h1 class="text-center">Menu</h1>
+        <div class="row row-cols-1 row-cols-md-4 g-4 py-5">
+
+            <div class="col" *ngFor="let data of menulist">
+                <div class="card" >
+                    <div class="image-container">
+                     <img class="home-page-item-image"   [src]="'data:image/png/JPG;base64,'+data.item_image" alt="Item Image" (click)="getMenuItems(data.item_name)"></div>
+                    <div class="card-body" >
+                      <h5>{{data.item_name}}</h5>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-around">
+                        <h3> Starting from {{data.price}}</h3>
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<div  *ngIf="show">
+    <div class="card">
+        <div class="image-container">
+         <img class="home-page-item-image"  src="../../../assets/HyderabadiBiryani.png" alt="Item Image" (click)="get_nonveg()"></div>
+        <div class="card-body" >
+          <h5>Non-vegItems</h5>
+        </div>
+        <div class="mb-5 d-flex justify-content-around">
+            <h3> Starting from 180</h3>
+            
+        </div>
+       
+    </div>
+    <app-restaurent-nonvegitems ></app-restaurent-nonvegitems>
+</div>
+   
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<body>
+   <form [formGroup] = "agroup" (ngSubmit)="updatesubmit()">
+      <input type="text" [(ngModel)]="arr1.item_name" formControlName="Item_name"> 
+    <input type="text" [(ngModel)]="arr1.actual_price" formControlName="actual_price">
+    <input type="text" [(ngModel)]="arr1.dicount" formControlName="discount">
+    <input type="text" [(ngModel)]="arr1.quantity" formControlName="Quantity">
+    <input type="file"  formControlName="item_image" (change)="onSelected($event)"><img [src]="'data:image/png/JPG;base64,' + arr1.item_image" alt="Item Image" style="width: 50px;height: 50px;" *ngIf="check">
+    <button type="submit">Update</button>
+    
+
+   </form>
+</body>
+<input type="text" [(ngModel)]="arr1.item_name"> 
+
+
