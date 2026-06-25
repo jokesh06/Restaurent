@@ -1,27 +1,116 @@
-# Restaurent
+# 🍽️ Restaurant Management App — Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+A responsive full-stack frontend built with **Angular**, featuring dual-role login, menu browsing, cart management, and real-time order tracking.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Tech Stack
 
-## Code scaffolding
+| Layer | Technology |
+|---|---|
+| Framework | Angular 15+ |
+| Language | TypeScript |
+| Styling | HTML5 + CSS3 |
+| HTTP Client | Angular HttpClient |
+| Routing | Angular Router |
+| Auth Guard | Route Guards (CanActivate) |
+| State | Component-based + Services |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## ✨ Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Dual-role login** — Separate dashboards for Admin and Customer
+- **Menu browsing** — Customers can view and filter available menu items
+- **Cart management** — Add/remove items, update quantities before checkout
+- **Order placement** — Seamless order flow with confirmation
+- **Admin dashboard** — Manage menu items and track all orders
+- **JWT integration** — Token stored and sent with every secured API request
+- **Route Guards** — Protected routes based on user role
+- **Responsive UI** — Clean layout across desktop and mobile
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📁 Project Structure
 
-## Running end-to-end tests
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── login/              # Login page
+│   │   ├── register/           # Register page
+│   │   ├── menu/               # Menu listing
+│   │   ├── cart/               # Cart management
+│   │   ├── orders/             # Order history
+│   │   └── admin/              # Admin dashboard
+│   ├── services/
+│   │   ├── auth.service.ts     # Login, token management
+│   │   ├── menu.service.ts     # Menu API calls
+│   │   └── order.service.ts    # Order API calls
+│   ├── guards/
+│   │   └── auth.guard.ts       # Route protection
+│   ├── models/                 # TypeScript interfaces
+│   └── app-routing.module.ts   # Route configuration
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## ⚙️ Getting Started
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Prerequisites
+- Node.js 16+
+- Angular CLI (`npm install -g @angular/cli`)
+- Backend API running at `http://localhost:8080`
+
+### Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/jokesh06/Restaurent_angular.git
+cd Restaurent_angular
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the development server
+ng serve
+```
+
+The app will run at `http://localhost:4200`
+
+---
+
+## 🔗 Backend Repository
+
+The Spring Boot backend API for this project is available here:
+👉 [Restaurant Management App — Backend](https://github.com/jokesh06/RestauretProject_main_backend)
+
+---
+
+## 📸 App Flow
+
+```
+Login / Register
+      ↓
+  Role Check
+  ↙        ↘
+Admin      Customer
+  ↓            ↓
+Manage       Browse Menu
+Menu          ↓
+& Orders    Add to Cart
+              ↓
+           Place Order
+              ↓
+          Order History
+```
+
+---
+
+## 👨‍💻 Author
+
+**Jokesh Ankeshwarapu**
+Java Full Stack Developer | Spring Boot · Angular · Microservices · AWS
+
+https://www.linkedin.com/in/jokesh-ankeshwarapu-25872b217/
+https://github.com/jokesh06
